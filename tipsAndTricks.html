@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Tips and Tricks | Vimium - にほんご。</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Tips and Tricks | Vimium - にほんご。">
+    <meta property="og:url">
+    <meta property="og:type" content="article">
+    <link rel="icon" href="https://tr.you84815.space/vimium/favicon.ico">
+    <style>html{overflow-y:scroll;font-size:16px}body{font-family:"游ゴシック Medium","Yu Gothic Medium",YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ',Meiryo,sans-serif;font-feature-settings:"palt";letter-spacing:.8pt;word-wrap:break-word;line-height:1.6;margin:0;padding:0;color:#000;text-shadow:0 0 0 #000}#container{display:grid;grid-template-columns:240px auto;grid-template-rows:54px auto auto;grid-template-areas:' header header  ' ' navi   content ' ' footer footer  '}footer,header{grid-area:header;grid-column:1/3;grid-row:1/2}#content,#navi{grid-area:navi;grid-column:1/2;grid-row:2/3}#content{grid-area:content;grid-column:2/3}footer{grid-area:footer;grid-row:3/4;height:2em;line-height:1.6;text-align:right}@media screen and (max-width:1120px){#container{grid-template-columns:100%;grid-template-rows:70px auto auto}#content,#navi,header{grid-column:1}}code{background-color:#f0f0f0;margin:0 2px;padding:2px 4px;font-size:.88em;font-family:Consolas,Monaco,"游ゴシック Medium","Yu Gothic Medium",YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ',Meiryo,monospace}pre{border:1px solid #eee;color:#333;margin:.8em 0 0;line-height:1.4;letter-spacing:normal}pre>code{background-color:transparent;font-size:.88rem}blockquote{color:#666;margin-left:0;padding-left:1em;border-left:2px solid #eee;font-size:.8rem}footer,p.note{font-size:.72rem}#main span.args,#main span.type,p.note,sup.note{color:#666}p{margin:.4em 0}dd{margin-left:1em}ul{padding-left:1.6em}#navi ul,ul.none{list-style-type:none}ul.disc{list-style-type:disc}ul.num{list-style-type:decimal}.table-box,pre{overflow-x:auto}.my-table,.my-table td{border:1px solid #e0e0e0}.my-table{border-collapse:collapse;width:100%}.my-table th{border:1px solid #333;vertical-align:top;background-color:#333;color:#fff}.my-table th.detail{min-width:16em}.my-table td{vertical-align:top;padding:16px 8px;word-wrap:break-word}.nowrap{white-space:nowrap}header{display:flex;align-items:center;height:3.4em;padding:16px;position:fixed;z-index:99;box-sizing:border-box;background-color:rgba(255,255,255,.8)}.navi_toggle{font-size:.8rem;width:1.6em;padding-top:.4em;display:none;position:relative}.icon svg,.navi_toggle svg{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;width:2em}#menu_close,#navi .hidden{display:none}.icon{width:32px;height:32px;display:block;position:relative}.icon svg{width:16px;height:16px}.title{font-size:.8rem;padding:1.1em 1em .9em}#navi a,.title a{color:#000;text-decoration:none}#navi{padding-left:1.5em;height:calc(100% - 5em);overflow-y:auto;margin-top:54px;position:fixed;width:240px;box-sizing:border-box}.navi{display:block}#navi .s-title{font-size:.72rem;color:#666}#navi ul{margin:0;padding:0}#navi li{font-size:1rem;text-shadow:none;margin:.64em 0}#navi li li,#navi li li li{font-size:.8rem;text-shadow:none;margin:.48em .48em .48em .56em}#navi li li li{text-shadow:0 0 0 #000;margin:.48em .48em .48em .96em;font-weight:400}#navi a{transition:.4s;border-bottom:1px #fff solid}#navi a.active,#navi li,#navi li li{font-weight:700}#navi a.active::before{content:'\bb \20 ';font-size:.96em;margin-left:-.97em}#navi hr{border-top:1px solid #f0f0f0;width:200px;margin:2.4em 0}#navi::-webkit-scrollbar{width:4px}#navi::-webkit-scrollbar-thumb{background-color:rgba(238,238,238,.3)}#navi:hover::-webkit-scrollbar-thumb{background-color:#eee}#navi_source{margin-top:1em}#navi_source a{margin-left:2.4em;font-weight:400}#main .share_link svg,#navi_source svg{width:1.72em}#main{width:800px;line-height:2;margin:0 auto;height:100%;box-sizing:border-box}#main a{color:#333;text-decoration:none;border-bottom:1px solid #eee;padding-bottom:.24em;transition:.3s}#main h1,#main h2{font-size:2rem;font-weight:400}#main h2{font-size:1.44rem;margin:0 0 .8em;padding-top:4em}#main h3,#main h4,#main h5{font-size:1rem;margin:0 0 .4em;padding-top:1.6em}#main h4,#main h5{font-size:.72rem}#main h5{color:#666;margin:0 0 .2em;padding-top:1.2em}#main h6{font-size:.64rem;text-decoration:underline;margin:0 0 .8em;padding-top:2em}.license{margin-top:4em;margin-bottom:2.4em;line-height:1.6;font-size:.72rem;text-align:right}footer>span{background-color:rgba(255,255,255,.8);padding:4px;position:fixed;bottom:4px;right:8px}#main .share_link{text-align:right;margin-top:32px}#main .share_link a{width:40px;text-shadow:none;margin-left:16px;color:#aaa;border-bottom:0}a.i-hatena{position:relative}a.i-hatena>span{position:absolute;left:.25em;font-family:Verdana;font-weight:700;color:#fff;font-style:normal}@media screen and (max-width:1120px){html{font-size:16px}#navi,header{width:100%}.navi_toggle{width:32px;height:32px;display:block}.icon,.navi{display:none}#navi{font-size:16px;margin-top:16px;position:fixed;top:1.6em;background-color:rgba(255,255,255,.8);z-index:99;height:100%}#navi li{font-size:1.2em;margin:.8em 0}#navi li li,#navi li li li{font-size:.8em;margin:1em 0 0 1em}.show{display:block}#main{width:100%;padding:1.6em}}.search-box{margin:2.4em 0;width:200px}.cse .gsc-control-cse,div.gsc-control-cse{border:0;padding:0}div.gsc-input-box{border:0;border-bottom:1px solid #000}form.gsc-search-box-tools .gsc-search-box td.gsc-input{padding-right:0}div.gsc-input-box-focus,div.gsc-search-box td.gsc-input>input:focus{border:0;border-bottom:1px solid #333;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none}td.gsib_a{padding-top:5px}a.gsst_a span.gscb_a{color:#aaa}button.gsc-search-button{margin-left:0}.cse .gsc-search-button button.gsc-search-button-v2,button.gsc-search-button-v2{padding:6px}.cse button.gsc-search-button,button.gsc-search-button{color:#fff;border:0;border-bottom:1px solid #000;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;background-color:#000;background-image:none;filter:none}@media screen and (max-width:1120px){.search-box{width:90%}}::selection{background:rgba(61,90,254,.2)}::-moz-selection{background:rgba(61,90,254,.2)}#main a:hover,#main a:visited:hover,#navi a:hover{color:#3d5afe}.icon svg rect{fill:#3d5afe}img{max-width:100%}</style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-106478577-1', 'auto');
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div class="icon"><a class="no-barba" href="https://tr.you84815.space/">
+            <svg>
+              <rect width="16" height="16" fill="#e0e0e0"></rect>
+            </svg></a></div>
+        <div class="navi_toggle" onclick="toggleMenu()">
+          <svg id="menu_close" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          <svg id="menu_open" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+          </svg>
+        </div>
+        <div class="title">Vimium - <a class="no-barba" href="https://tr.you84815.space/">にほんご。</a></div>
+      </header>
+      <div class="navi" id="navi">
+        <ul class="menu">
+          <li><a class="index" href="./index.html">Home</a></li>
+          <li><a class="introduction" href="./introduction.html">Introduction</a></li>
+          <li><a class="keyboardBindings" href="./keyboardBindings.html">Keyboard Bindings</a>
+            <ul class="hidden" id="navi_keyboardBindings">
+              <li><a href="./keyboardBindings.html#currentPage">現在ページの操作</a></li>
+              <li><a href="./keyboardBindings.html#newPages">新規ページへの操作</a></li>
+              <li><a href="./keyboardBindings.html#find">ページ内検索</a></li>
+              <li><a href="./keyboardBindings.html#history">履歴操作</a></li>
+              <li><a href="./keyboardBindings.html#tabs">タブの操作</a></li>
+              <li><a href="./keyboardBindings.html#marks">マーク操作</a></li>
+              <li><a href="./keyboardBindings.html#advanced">さらに高度なコマンド</a></li>
+            </ul>
+          </li>
+          <li><a class="visualMode" href="./visualMode.html">Visual Mode</a></li>
+          <li><a class="findMode" href="./findMode.html">Find Mode</a></li>
+          <li><a class="usingLinkHints" href="./usingLinkHints.html">Using Link Hints</a>
+            <ul class="hidden" id="navi_usingLinkHints">
+              <li><a href="./usingLinkHints.html#alphabet">アルファベットヒント</a></li>
+              <li><a href="./usingLinkHints.html#filtered">ナンバーヒント</a></li>
+              <li><a href="./usingLinkHints.html#hidden">隠れたヒントマーカー</a></li>
+            </ul>
+          </li>
+          <li><a class="searchCompletion" href="./searchCompletion.html">Search Completion</a></li>
+          <li><a class="customKeyMappings" href="./customKeyMappings.html">Custom Key Mappings</a></li>
+          <li><a class="searchEngines" href="./searchEngines.html">Search Engines</a></li>
+          <li><a class="keyMappings" href="./keyMappings.html">Key Mappings</a>
+            <ul class="hidden" id="navi_keyMappings">
+              <li><a href="./keyMappings.html#emacs">Emacs</a></li>
+              <li><a href="./keyMappings.html#kakoune">Kakoune</a></li>
+              <li><a href="./keyMappings.html#russian">ロシア語キーボード</a></li>
+              <li><a href="./keyMappings.html#bulgarian">ブルガリア語キーボード</a></li>
+              <li><a href="./keyMappings.html#hebrew">ヘブライ語キーボード</a></li>
+              <li><a href="./keyMappings.html#mongolian">モンゴル語キーボード</a></li>
+              <li><a href="./keyMappings.html#georgian">グルジア語キーボード</a></li>
+            </ul>
+          </li>
+          <li><a class="disablingVimium" href="./disablingVimium.html">Disabling Vimium</a>
+            <ul class="hidden" id="navi_disablingVimium">
+              <li><a href="./disablingVimium.html#partially">一部無効化</a></li>
+              <li><a href="./disablingVimium.html#wholly">全体的に無効化</a></li>
+              <li><a href="./disablingVimium.html#temporarily">一時的に無効化</a></li>
+            </ul>
+          </li>
+          <li><a class="tipsAndTricks active" href="./tipsAndTricks.html">Tips and Tricks</a></li>
+          <li><a class="faq" href="./faq.html">FAQ</a></li>
+          <li><a class="vimrc" href="./vimrc.html">.vimrc</a></li>
+          <li><a class="otherBrowser" href="./otherBrowser.html">Alternative Vimium for Other Browser</a>
+            <ul class="hidden" id="navi_otherBrowser">
+              <li><a href="./otherBrowser.html#firefox">Firefoxサポート</a></li>
+              <li><a href="./otherBrowser.html#other">その他のブラウザ</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="content">
+        <div id="main">
+          <div id="barba-wrapper">
+            <div class="barba-container">
+              <h1>Tips and Tricks</h1>
+              <h2>tipsとテクニック</h2>
+              <h3>Vomnibarでの移動。</h3>
+              <p>
+                Vomnibarが開いており、リストが表示されている場合
+                <code>&#x3C;tab&#x3E;</code>/<code>&#x3C;shift&#x3E;&#x3C;tab&#x3E;</code>、
+                <code>c-n</code>/<code>c-p</code>、
+                <code>c-j</code>/<code>c-k</code>でカーソルを上下に移動することができます。
+              </p><br>
+              <h3>最近アクセスしたタブ</h3>
+              <p>Vomnibarがタブモードの時(デフォルトでは<code>T</code>)、タブは最近表示したものから順に並べられます。</p>
+              <ul>
+                <li><code>T&#x3C;enter&#x3E;</code>は最近表示したタブに移動します。</li>
+                <li><code>T&#x3C;tab&#x3E;&#x3C;enter&#x3E;</code>は2つ前に表示していたタブに移動します。</li>
+                <li>3つ前以前も同様です</li>
+              </ul><br>
+              <h3>カウンタプレフィックス</h3>
+              <p>
+                Vimのように、多くのVimiumコマンドもカウンタプレフィックスを付与することができます。
+                例えば、<code>K</code>は1つの右のタブに移動し、<code>3K</code>は3つ右のタブに移動します。
+              </p><br>
+              <h3>フォルダ別のブックマーク検索</h3>
+              <p>
+                Vomnibarがブックマークモードの場合は、
+                フォルダごとにブックマークを検索することができます。
+                クエリに<code>/</code>を含めることで、
+                ブックマークフォルダ名をマッチさせます。
+                例えば、"Mobile bookmarks"フォルダ内のBBCに関するブックマークを検索するには以下のように指定します。
+              </p>
+              <pre><code class="txt">/mob bbc</code></pre>
+              <blockquote class="note">フォルダ名は日本語も対応しています。</blockquote><br>
+              <h3>スムーススクロール</h3>
+              <p>
+                スムーススクロールが有効な場合、
+                <code>j</code>または<code>k</code>を長押しすると、ページがスムーズに上下します。
+                速度が遅すぎたり、速すぎる場合は、オプションページの"<b>Scroll step size</b>"で調整することができます。
+              </p>
+              <p>
+                スムーススクロールはデフォルトでは有効になっていますが、
+                オプションページの"<b>Use smooth scrolling</b>"で無効にすることができます。
+              </p><br>
+              <h3>フレーム</h3>
+              <p>
+                一部のWebページではフレームが使われています。
+                <code>gf</code>コマンドを使ってフレーム間を移動することができます。
+                <code>gf</code>でフレームを選択すると、選択中のフレームの枠が黄色で点滅します。
+              </p>
+              <p>
+                それでも、多数のフレームを使用したページでは、
+                どのフレームが選択されているか把握するのが難しい場合があります。
+                その場合、<code>gF</code>コマンドを使用すると、メインのフレームにフォーカスを戻すことができます。
+              </p><br>
+              <h3>最近のVomnibarクエリを繰り返す</h3>
+              <p>Omniモード(<code>o</code>、<code>O</code>)では、
+                Vomnibarが開かれたあと、
+                <code>&#x3C;tab&#x3E;</code>で最近のクエリと検索内容のリストを開きます。
+                リストを選択すると、再検索や内容の編集をすることができます。
+              </p>
+              <p>
+                カスタム検索エンジンの場合も同様に、
+                カスタム検索エンジンを起動した直後に<code>&#x3C;tab&#x3E;</code>を押すと、
+                カスタム検索エンジンの最近のクエリリストを開きます。
+              </p><br>
+              <h3>カスタム検索エンジンのキーボードショートカット</h3>
+              <p>
+                カスタム検索エンジンはキーボードショートカットで直接起動することができます。
+                (つまり、Vomnibarを開き、検索エンジンのキーワードを入力してから<code>&#x3C;space&#x3E;</code>を入力する必要はありません。)
+                いくつかの例を示します。
+              </p>
+              <h4>カスタム検索エンジン</h4>
+              <pre><code class="txt">g: https://www.google.com/search?q=%s Google
+w: http://en.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia</code></pre>
+              <h4>カスタムキーマッピング</h4>
+              <pre><code class="txt">map s Vomnibar.activate keyword=g
+map w Vomnibar.activate keyword=w</code></pre>
+              <p>(<code>keyword=X</code>オプションに注目してください。
+                これによりアクティブにするカスタム検索エンジンを選択します。)
+              </p>
+              <p>
+                上記のように設定した場合、
+                キーボードショートカットの<code>s</code>と<code>w</code>は、
+                それぞれGoogleとWikipediaのカスタム検索モードでVomnibarを起動します。
+              </p>
+              <p>このオプションは、<code>Vomnibar.activate</code>と<code>Vomnibar.activateInNewTab</code>にのみ指定することができます。</p><br>
+              <h3>カウント付きのカスタムキーマッピング</h3>
+              <p>カスタムキーマッピングにはカウントを含めることができます。</p>
+              <pre><code class="txt">map d scrollDown count=5</code></pre>
+              <p>
+                このようなマッピング(とスムーススクロール)の場合、
+                <code>d</code>を押し続けると、<code>j</code>を押し続けるよりも速くスクロールします。
+              </p>
+              <p>
+                以下は複数のリンクを新しいタブで開き、
+                それぞれのタブが生成された時に切り替えます。
+              </p>
+              <pre><code class="txt">map qf LinkHints.activateModeToOpenInNewForegroundTab count=999999</code></pre><br>
+              <h3>input内でescキーを使う</h3>
+              <p>Vimiuは<code>&#x3C;esc&#x3E;</code>でインサートモードを終了します。
+                一部のWebサイトでは、
+                <code>&#x3C;esc&#x3E;</code>で入力中であってもアクション(ウィンドウを閉じる等)を実行します。
+                Vimiumはそのような機能をブロックします。
+                一つの例としては、FacebookのMessengerポップアップです。
+              </p>
+              <p><code>passNextKey</code>コマンドを使って問題を解決します。</p>
+              <pre><code class="txt">map &#x3C;c-]&#x3E; passNextKey</code></pre>
+              <p>これで<code>&#x3C;c-]&#x3E;&#x3C;esc&#x3E;</code>を押すと、Webページに<code>&#x3C;esc&#x3E;</code>キーを渡します。
+                Facebookの場合は、Messengerポップアップが閉じられます。
+              </p><br>
+              <h3>音をミュートにする</h3>
+              <p><code>toggleMuteTab</code>コマンドは、
+                現在のタブをミュート/ミュート解除します。
+                このコマンドには2つの高度な形式もあります。
+              </p>
+              <pre><code class="txt">map X toggleMuteTab all
+map Y toggleMuteTab other</code></pre>
+              <p>
+                1つ目は、ミュートされていないタブがあれば全てミュートします。
+                そうでなければ、ミュートされているタブを全てミュート解除します。
+              </p>
+              <p>2つ目も1つ目と同様ですが、ミュートの判定に現在のタブが除外されます。</p><br>
+              <h3>URLを指定してタブやウィンドウを作る</h3>
+              <p><code>createTab</code>コマンドを使用すると、
+                特定のURLのタブやウィンドウを生成することができます。
+              </p>
+              <pre><code class="txt">map X createTab http://www.bbc.com/news
+map X createTab window
+map X createTab incognito
+map X createTab window http://www.bbc.com/news https://twitter.com/</code></pre><br>
+              <h3>グローバルマークとローカルマークの入れ替え</h3>
+              <p>
+                Vimでは大文字はグローバルマーク、小文字はローカルマークです。
+                ブラウザの場合、ローカルマークよりもグローバルマークの方が間違いなく便利です。
+                したがって、Vimiumではこれらを交換することができます。
+              </p>
+              <pre><code class="txt">map X Marks.activateCreateMode swap
+map Y Marks.activateGotoMode swap</code></pre>
+              <p>これらのマッピングでは、小文字がグローバルマークとしてみなされ、その逆も同様になります。</p><br>
+              <h3>パスキーの無効化</h3>
+              <p>
+                Gmailのようなサイトでは、
+                通常、ページのキーボードショートカットを使うためにパスキーを設定します。
+                これによりVimiumはキーバインドにアクセスできなくなります。
+              </p>
+              <p><code>passNextKey</code>コマンドを使うと、
+                再度Vimiumのノーマルモードに入ることができます。
+              </p>
+              <pre><code class="txt"># Vimiumのノーマルモードコマンドを1つだけ実行します。
+map \ passNextKey normal
+ 
+# 多くのVimiumノーマルモードコマンドを実行します。
+map &#x3C;c-}&#x3E; passNextKey normal count=999999</code></pre><br>
+              <h3>キーマッピング</h3>
+              <p>オプションページの"<b>Custom key mappings</b>"では
+                キーの変換をすることができます。(一部のモード場合。)
+              </p>
+              <p>キーの変換は、ノーマルモード、ビジュアルモード、および<code>&#x3C;esc&#x3E;</code>の検出(全てのモード)時に適用されます。</p>
+              <pre><code class="txt"># ブラジル語キーボードで正しく動作します。
+# &#x22;ç&#x22;を入力すると、&#x22;l&#x22;として扱われます。
+mapkey ç l
+ 
+# escのマッピングを追加します。
+mapkey &#x3C;c-c&#x3E; &#x3C;c-[&#x3E;
+ 
+# &#x3C;c-[&#x3E;を無効化します。
+mapkey &#x3C;c-[&#x3E; &#x3C;anyOldJunk&#x3E;</code></pre>
+              <p>シングルキーマッピングのみ対応しています。</p><br>
+              <h3>ハードリロード</h3>
+              <p><code>reload</code>コマンドを使用すると、キャッシュを無視して再読込みすることができます。</p>
+              <pre><code class="txt">map R reload hard</code></pre><br>
+              <div class="license">
+                <p>
+                  &copy; 2010
+                    Phil Crosby, Ilya Sukhar. See <a href="https://github.com/philc/vimium/blob/master/MIT-LICENSE.txt">MIT-LICENSE.txt</a> for details.
+                </p>
+                <p>このコンテンツはPhil Crosby(philc)、Ilya Sukhar(ilya)による<a href="https://github.com/philc/vimium">Vimiumドキュメント</a>を翻訳/改変したものです。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer><span>
+           &copy; <span id="copy_year">2017</span> tobijibu</span></footer>
+    </div>
+    <noscript id="deferred-styles">
+      <link href="./css/lazy.css" rel="stylesheet">
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+      
+    </script>
+    <script src="./js/main.js"></script>
+    <div id="src" hidden></div>
+  </body>
+</html>
